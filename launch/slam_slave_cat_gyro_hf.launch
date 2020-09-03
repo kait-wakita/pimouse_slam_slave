@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="pimouse_slam" name="motors_on_odom_hf" type="motors_on_odom_gyro_hf.py" required="true" />
+  <node pkg="pimouse_slam" name="mpu6050_rot_hf" type="mpu6050_rot_hf.py" />
+  <node pkg="urg_node" name="urg_node" type="urg_node" required="true" >
+        <param name="frame_id" value="laser_link"/>
+  </node>
+  <node pkg="tf" type="static_transform_publisher" name="laser_link_broadcaster" args="0.14 0 0 0 0 0 base_link laser_link 100" />
+</launch>
+

@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="pimouse_slam" name="motors_odom" type="motors_odom_gyro2.py" required="true" />
+  <node pkg="pimouse_slam" name="mpu6050_rot" type="mpu6050_rot2.py" />
+  <node pkg="urg_node" name="urg_node" type="urg_node" required="true" >
+        <param name="frame_id" value="base_link"/>
+  </node>
+</launch>
+
